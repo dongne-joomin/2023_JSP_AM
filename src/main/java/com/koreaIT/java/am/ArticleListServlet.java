@@ -20,9 +20,8 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ArticleListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		response.setContentType("text/html; charset=UTF-8");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		Connection conn = null;
 
@@ -38,8 +37,6 @@ public class ArticleListServlet extends HttpServlet {
 			sql.append("ORDER BY id DESC");
 
 			List<Map<String, Object>> articleListMap = DBUtil.selectRows(conn, sql);
-
-//			response.getWriter().append(articleListMap.toString());
 
 			request.setAttribute("articleListMap", articleListMap);
 
