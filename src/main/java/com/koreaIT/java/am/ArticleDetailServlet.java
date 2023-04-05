@@ -30,20 +30,15 @@ public class ArticleDetailServlet extends HttpServlet {
 			String url = "jdbc:mysql://127.0.0.1:3306/JSPTest?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true&zeroDateTimeNehavior=convertToNull";
 
 			conn = DriverManager.getConnection(url, "root", "");
+					
+			int id = Integer.parseInt(request.getParameter("id"));
 			
-//			SecSql sql = new SecSql();
-//
-//			sql.append("SELECT a.*, m.name");
-//			sql.append("FROM article AS a");
-//			sql.append("INNER JOIN member AS m");
-//			sql.append("ON a.memberId = m.id");
-//			sql.append("WHERE a.id = ?", id);
-//
-//			Map<String, Object> articleListMap = DBUtil.selectRow(conn, sql);
+			SecSql sql = SecSql.from("SELECT * FROM article");
+			sql.append("WHERE id = ?", id);
 
-//			response.getWriter().append(articleListMap.toString());
+			Map<String, Object> articleRow = DBUtil.selectRow(conn, sql);
 
-//			request.setAttribute("articleDetialMap", articleListMap);
+			request.setAttribute("articleRow", articleRow);
 
 			request.getRequestDispatcher("/jsp/article/detail.jsp").forward(request, response);
 
