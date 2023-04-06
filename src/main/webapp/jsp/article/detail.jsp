@@ -19,7 +19,9 @@ Map<String, Object> articleRow = (Map) request.getAttribute("articleRow");
 	<div>날짜 : <%= (LocalDateTime) articleRow.get("regDate") %></div>
 	<div>제목 : <%= (String) articleRow.get("title") %></div>
 	<div>내용 : <%= (String) articleRow.get("body") %></div>
-	<div><a href="list">목록</a></div>
-	<div><a href="list">삭제</a></div>
+	<div>
+	<a href="list">목록</a>
+	<a href="doDelet?id=<%= (int) articleRow.get("id") %>">삭제</a>
+	</div>
 </body>
 </html>
