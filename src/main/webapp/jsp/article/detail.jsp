@@ -15,13 +15,14 @@ Map<String, Object> articleRow = (Map) request.getAttribute("articleRow");
 </head>
 <body>
 	<h1><%= (int) articleRow.get("id") %>번 게시물</h1>
+	
 	<div>번호 : <%= (int) articleRow.get("id") %></div>
 	<div>날짜 : <%= (LocalDateTime) articleRow.get("regDate") %></div>
 	<div>제목 : <%= (String) articleRow.get("title") %></div>
 	<div>내용 : <%= (String) articleRow.get("body") %></div>
 	<div>
-	<a href="list">목록</a>
-	<a href="doDelet?id=<%= (int) articleRow.get("id") %>">삭제</a>
+		<a href="list">목록</a>
+		<a href="doDelete?id=<%= (int) articleRow.get("id") %>">삭제</a>
 	</div>
 </body>
 </html>

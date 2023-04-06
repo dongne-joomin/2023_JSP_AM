@@ -39,4 +39,14 @@
     <servlet-name>ArticleListServlet</servlet-name>
     <url-pattern>/ArticleListServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>dad</display-name>
+    <servlet-name>dad</servlet-name>
+    <servlet-class>com.koreaIT.java.am.dad</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dad</servlet-name>
+    <url-pattern>/dad</url-pattern>
+  </servlet-mapping>
 </web-app>
