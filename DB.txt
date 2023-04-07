@@ -12,6 +12,7 @@ CREATE TABLE article(
 	`body` TEXT NOT NULL
 );
 
+
 # article 테스트 데이터
 INSERT INTO article
 SET regDate = NOW(),
@@ -30,5 +31,14 @@ SET regDate = NOW(),
 updateDate = NOW(),
 title = 'test3',
 `body` = 'test3';
+
+# article 테스트 데이터 배수 증가
+INSERT INTO article(regDate, updateDate, title, `body`)
+SELECT NOW(), NOW(), CONCAT('제목_', RAND()), CONCAT('내용_', RAND())
+FROM article; 
+
+#
+TRUNCATE article
+
 
 SELECT * FROM article;
