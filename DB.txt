@@ -40,5 +40,15 @@ FROM article;
 # 테이블 안의 데이터 삭제시 캐시같은것도 같이 삭제
 TRUNCATE article
 
+# member 테이블 생성
+CREATE TABLE `member`(
+	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	regDate DATETIME NOT NULL,
+	updateDate DATETIME NOT NULL,
+	loginId VARCHAR(50) NOT NULL UNIQUE,
+	loginPw VARCHAR(50) NOT NULL,
+	`name` VARCHAR(50) NOT NULL
+);
 
 SELECT * FROM article;
+SELECT * FROM `member`;
