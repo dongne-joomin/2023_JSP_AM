@@ -23,6 +23,9 @@
 	<div>
 	<a href="write">글쓰기</a>
 	</div>
+	<div>
+	<a href="../home/main">메인화면</a>
+	</div>
 	
 	<table border = "1" >
 		<colgroup>
