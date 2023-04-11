@@ -33,7 +33,7 @@ public class ArticleDoWriteServlet extends HttpServlet {
 			conn = DriverManager.getConnection(Config.getDBUrl(), Config.getDBUser(), Config.getDBPassWd());
 
 			String title = request.getParameter("title");
-			String body =request.getParameter("body"); 
+			String body = request.getParameter("body"); 
 			
 			HttpSession session = request.getSession();
 			int loginedMemberId = (int) session.getAttribute("loginedMemberId");
